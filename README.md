@@ -1,0 +1,2 @@
+# binmask
+Easy binary masks
