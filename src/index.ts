@@ -11,7 +11,7 @@ function bitLength (num: number): number {
  * Class that can be used to construct binary masks
  */
 export class Mask {
-  public readonly mask: number
+  private readonly mask: number
 
   // Mask defaults to all 1's
   constructor (mask: number = ~0) {
@@ -48,7 +48,7 @@ export class Mask {
    * Combines two masks to make a single one
    */
   combine (mask: Mask|number): Mask {
-    return new Mask(this.mask | ((mask as Mask)?.mask ?? mask))
+    return new Mask(this.mask | (mask as number))
   }
 
   valueOf (): number {
